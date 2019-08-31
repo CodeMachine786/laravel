@@ -22,6 +22,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function(){
-    Route::get('/','AdminController@dashboard')->name('adminDashboard');
-    Route::get('category','AdminController@category')->name('adminCategory');
+    Route::get('/','AdminController@dashboard')->name('Dashboard');
+    Route::get('category','CategoryController@category')->name('Category');
+});
+
+Route::prefix('admin/category')->group(function(){
+   Route::get('add','CategoryController@addCategory')->name('Add');
+   Route::POST('create','CategoryController@create')->name('Create');
 });

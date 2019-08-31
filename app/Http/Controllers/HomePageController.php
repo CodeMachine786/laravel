@@ -9,7 +9,7 @@ class HomePageController extends Controller
 {
     public function index(){
         if(isset(Auth::user()->admin) && Auth::user()->admin == true ){
-            return redirect(route('adminDashboard'));
+            return redirect(route('Dashboard'));
         }
         return view('home');
 	}

@@ -1,5 +1,5 @@
 <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item {{ Request::route()->getName() =='Dashboard'? 'active':'' }}">
         <a class="nav-link" href="{{ url('/admin') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
@@ -31,10 +31,18 @@
 <!--           <i class="fas fa-fw fa-table"></i> -->
 <!--           <span>Tables</span></a> -->
 <!--       </li> -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('/admin/category') }}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Categories</span></a>
+	  
+	  <li class="nav-item dropdown {{ Request::route()->getName() =='Category'? 'active':'' }}">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Categories</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <!--  <h6 class="dropdown-header">Login Screens:</h6> -->
+          <a class="dropdown-item" href="{{ url('/admin/category') }}">View</a>
+          <a class="dropdown-item" href="{{ url('/admin/category/add') }}">Add</a>
+          <a class="dropdown-item" href="forgot-password.html">Delete</a>
+          <a class="dropdown-item" href="forgot-password.html">Update</a>
+        </div>
       </li>
-
     </ul>

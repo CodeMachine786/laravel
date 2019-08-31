@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Console\MiddlewareMakeCommand;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -12,8 +13,5 @@ class AdminController extends Controller
     }
     public function dashboard(){
         return view('dashboard');
-    }
-    public function category(){
-        return view('category');
     }
 }
